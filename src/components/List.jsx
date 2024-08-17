@@ -1,7 +1,7 @@
 import { useTodoListContext } from '../context/TodoListContext';
 import TodoItem from './TodoItem';
 
-function List() {
+const List = () => {
     const { listValue } = useTodoListContext();
 
 

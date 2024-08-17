@@ -2,21 +2,21 @@ import { useRef } from 'react';
 import { useTodoListContext } from '../context/TodoListContext';
 
 const useAddTodo = () => {
-    const titleRef = useRef(null);
-    const priorityRef = useRef(null);
-    const dateRef = useRef(null);
-    const statusRef = useRef(null);
-    const { listValue, setListValue } = useTodoListContext();
+    const titleRef = useRef("");
+    const priorityRef = useRef("");
+    const dateRef = useRef("");
+    const statusRef = useRef("");
+    const { setListValue } = useTodoListContext();
 
     const addTodo = () => {
-        const textValue = titleRef.current.value;
+        const titleValue = titleRef.current.value;
         const priorityValue = priorityRef.current.value;
         const dateValue = dateRef.current.value;
         const statusValue = statusRef.current.value;
 
-        if (textValue) {
+        if (titleValue) {
             const todo = {
-                title: textValue,
+                title: titleValue,
                 priority: priorityValue,
                 date: dateValue,
                 status: statusValue
@@ -25,7 +25,7 @@ const useAddTodo = () => {
             setListValue(prevValue => [...prevValue, todo]);
 
             titleRef.current.value = '';
-            priorityRef.current.value = 'low'; 
+            priorityRef.current.value = 'baixa'; 
             dateRef.current.value = '';
             statusRef.current.value = 'pendente';
         }

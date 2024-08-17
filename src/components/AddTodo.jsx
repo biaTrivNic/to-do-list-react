@@ -1,7 +1,6 @@
-import React from 'react';
 import useAddTodo from '../hooks/useAddTodo';
 
-function AddTodo() {
+const AddTodo = () => {
     const { titleRef, priorityRef, dateRef, statusRef, addTodo } = useAddTodo();
 
     return (
