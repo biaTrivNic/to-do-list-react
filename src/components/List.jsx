@@ -8,8 +8,8 @@ const List = () => {
     return (
         <div>
             <ul>
-            {listValue.map((todo, index) => (
-                    <TodoItem key={index} todo={todo} />
+            {listValue.map((todo) => (
+                    <TodoItem key={todo.id} todo={todo} />
                 ))}
             </ul>
         </div>

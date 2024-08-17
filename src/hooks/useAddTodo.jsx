@@ -16,6 +16,7 @@ const useAddTodo = () => {
 
         if (titleValue) {
             const todo = {
+                id: crypto.randomUUID(),
                 title: titleValue,
                 priority: priorityValue,
                 date: dateValue,
