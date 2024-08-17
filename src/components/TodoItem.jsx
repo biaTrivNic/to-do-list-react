@@ -1,3 +1,5 @@
+import DeleteTodo from "./DeleteTodo";
+
 const TodoItem = ({ todo }) => {
     return (
         <li>
@@ -5,7 +7,7 @@ const TodoItem = ({ todo }) => {
             <p>Prioridade: {todo.priority}</p>
             <p>Status: {todo.status}</p>
             <p>Data: {todo.date}</p>
-            <button>excluir</button>
+            <DeleteTodo id={todo.id}/>
         </li>
     );
 }
