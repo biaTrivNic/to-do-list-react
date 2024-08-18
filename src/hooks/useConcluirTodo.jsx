@@ -5,7 +5,7 @@ const useConcluirTodo = () => {
 
     const concTodo = (id) => {
         const newList = listValue.map((todo) => 
-            todo.id === id ? { ...todo, status: "Concluída" } : todo
+            todo.id === id ? { ...todo, status: "concluída" } : todo
         );
 
         setListValue(newList);
