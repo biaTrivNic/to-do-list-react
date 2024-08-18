@@ -1,3 +1,4 @@
+import ConcluirTodo from "./ConcluirTodo";
 import DeleteTodo from "./DeleteTodo";
 
 const TodoItem = ({ todo }) => {
@@ -8,6 +9,7 @@ const TodoItem = ({ todo }) => {
             <p>Status: {todo.status}</p>
             <p>Data: {todo.date}</p>
             <DeleteTodo id={todo.id}/>
+            <ConcluirTodo id={todo.id}/>
         </li>
     );
 }
