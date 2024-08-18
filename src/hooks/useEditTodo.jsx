@@ -1,17 +1,45 @@
+import { useRef } from 'react';
 import { useTodoListContext } from '../context/TodoListContext';
 
 const useEditTodo = () => {
-    const { listValue, setListValue } = useTodoListContext();
+    const titleRef = useRef(null);
+    const priorityRef = useRef(null);
+    const dateRef = useRef(null);
+    const statusRef = useRef(null);
 
-    const delTodo = (id) => {
+    const { listValue, setListValue, setModalStyle } = useTodoListContext();
 
-        const newList = listValue.filter(todo => todo.id !== id);
+    const editTodo = (id) => {
+        const titleValue = titleRef.current.value;
+        const priorityValue = priorityRef.current.value;
+        const dateValue = dateRef.current.value;
+        const statusValue = statusRef.current.value;
 
-        setListValue(newList);
+        if (titleValue) {
+            const editedTodo = {
+                id,
+                title: titleValue,
+                priority: priorityValue,
+                date: dateValue,
+                status: statusValue
+            };
 
+            const newList = listValue.map((todo) => 
+                todo.id === id ? editedTodo : todo
+            );
+
+            setListValue(newList);
+            setModalStyle({ display: 'none' });
+        }
     };
 
-    return delTodo
+    return {
+        titleRef,
+        priorityRef,
+        dateRef,
+        statusRef,
+        editTodo
+    };
 };
 
 export default useEditTodo;

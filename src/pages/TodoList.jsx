@@ -17,6 +17,7 @@ const TodoList = () => {
             <TodoProvider>
                 <AddTodo />
                 <List />
+                <EditTodo/>
             </TodoProvider>
             <Logout />
         </div>
